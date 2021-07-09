@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: ENS
@@ -17,8 +17,8 @@ dataSources:
         - SetENSName
       abis:
         - name: ENS
-          file: ./abis/ENS.json
+          file: ENS/abis/ENS.json
       eventHandlers:
         - event: SetENSName(string)
           handler: handleSetENSName
-      file: ./src/mapping.ts
+      file: ENS/ENS.wasm
