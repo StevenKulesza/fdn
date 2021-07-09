@@ -1,0 +1,23 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ENS
+    network: goerli
+    source:
+      address: "0x6Ae3b1957e270724CBb7b62FE46996258a53AE38"
+      abi: ENS
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.2
+      language: wasm/assemblyscript
+      entities:
+        - SetENSName
+      abis:
+        - name: ENS
+          file: ./abis/ENS.json
+      eventHandlers:
+        - event: SetENSName(string)
+          handler: handleSetENSName
+      file: ./src/mapping.ts

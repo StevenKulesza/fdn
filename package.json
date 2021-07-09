@@ -1,0 +1,16 @@
+{
+  "name": "Fdn",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ StevenKulesza/Fdn",
+    "create-local": "graph create --node http://localhost:8020/ StevenKulesza/Fdn",
+    "remove-local": "graph remove --node http://localhost:8020/ StevenKulesza/Fdn",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 StevenKulesza/Fdn"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.20.1",
+    "@graphprotocol/graph-ts": "0.20.0"
+  }
+}
