@@ -1,4 +1,4 @@
 type SetENSName @entity {
   id: ID!
-  name: String! # string
+  name: String!
 }

@@ -1,16 +1,30 @@
 {
   "name": "Fdn",
   "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ StevenKulesza/Fdn",
     "create-local": "graph create --node http://localhost:8020/ StevenKulesza/Fdn",
     "remove-local": "graph remove --node http://localhost:8020/ StevenKulesza/Fdn",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 StevenKulesza/Fdn"
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 StevenKulesza/Fdn",
+    "serve": "nodemon index.js"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.20.1",
-    "@graphprotocol/graph-ts": "0.20.0"
+    "@graphprotocol/graph-ts": "0.20.0",
+    "apollo-datasource-graphql": "^1.3.2",
+    "apollo-server-express": "^2.25.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.4.0",
+    "pg": "^8.6.0",
+    "pg-format": "^1.0.4",
+    "twilio": "^3.65.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.10"
   }
 }
