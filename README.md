@@ -29,6 +29,10 @@ https://www.twilio.com/
     * A scheduled service will run to poll the subgraph and inserts new records into. 
     * A text message will be sent to `TWILIO_TO_NUMBER`
 
+<img width="987" alt="Screen Shot 2021-07-12 at 7 10 19 PM" src="https://user-images.githubusercontent.com/17483238/125366786-ceb23980-e344-11eb-9e14-3cbfe968dc73.png">
+
+<img width="235" alt="Screen Shot 2021-07-12 at 7 10 40 PM" src="https://user-images.githubusercontent.com/17483238/125366800-da9dfb80-e344-11eb-8792-7492a2313d52.png">
+
 ----
 
 # Questions
