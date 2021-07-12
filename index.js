@@ -28,6 +28,11 @@ const resolvers = {
   }
 }
 
+/*
+* Create an apollo server to eventually 
+* subscribe to SetENSName events
+*/
+
 const server = new ApolloServer({
   typeDefs,
   dataSources: dataSources,
@@ -42,5 +47,6 @@ server.applyMiddleware({ app });
 await new Promise(resolve => app.listen({ port: PORT }, resolve));
 console.log(`🚀 Server ready at http://localhost:${PORT}${server.graphqlPath}`);
 
+// initialize service
 const ens = new ENS()
-ens.insertNames()
+ens.pollNames()

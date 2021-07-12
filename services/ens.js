@@ -6,18 +6,30 @@ import { SMS } from "./sms.js"
 
 const api = new API()
 const sms = new SMS()
+
+/*
+* NOTE: prefer subscription websockets approach
+* long polls subgraph api every 5000 ms (5 seconds)
+*
+* if there are new records, persist them, and send an SMS message
+* if there are NOT records, do nothing
+*/ 
 export class ENS {
-    async insertNames() {
-        const names = await api.getENSNames().then(names => names)
-        const formattedNames = names['setENSNames'].map(({id, name}) => ([
+    formatNames(names) {
+        return names.map(({id, name}) => ([
             id,
             name,
             id.split('-')[0]
         ]))
-        
-        pool.query(format(insertEnsTable, formattedNames), (error, results) => {
+    }
+
+    async pollNames() {
+        const names = await api.getENSNames().then(names => names)        
+        pool.query(format(insertEnsTable, this.formatNames(names['setENSNames'])), (error, results) => {
             if (error) throw error
             if (results.rows.length > 0) results.rows.map(item => sms.sendSMS(item))
         })
+
+        setTimeout(() => this.pollNames(), 5000)
     }
 }

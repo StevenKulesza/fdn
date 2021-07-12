@@ -1,4 +1,5 @@
 # Foundation subgraph ENS sms notifications
+`https://thegraph.com/legacy-explorer/subgraph/stevenkulesza/fdn`
 
 ## setup
 - create `.env` file from `.env.example`:

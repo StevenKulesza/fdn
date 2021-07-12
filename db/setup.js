@@ -14,4 +14,5 @@ export const pool = new Pool({
     port: DB_PORT,
 })
   
+// create the initial table if it does not exist
 await pool.query(createEnsTable)

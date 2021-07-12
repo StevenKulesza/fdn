@@ -1,8 +1,21 @@
 import twilio from "twilio"
-import { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM_NUMBER, TWILIO_TO_NUMBER } from '../constants.js'
+import { 
+    TWILIO_ACCOUNT_SID, 
+    TWILIO_AUTH_TOKEN, 
+    TWILIO_FROM_NUMBER, 
+    TWILIO_TO_NUMBER 
+} from '../constants.js'
+
+/*
+* Sends an SMS message to the registered numbers.
+* To support sending to bulk numbers, purchase a Twilio license
+*
+* Consider handling this on worker threads based on volume of scale
+* Consider storing message sid and dataCreated on table for debugging.
+* Consider enabling monitor tooling
+*/ 
 
 const client = new twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
-
 export class SMS {
     sendSMS(item) {
         client.messages
