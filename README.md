@@ -17,10 +17,11 @@ TWILIO_TO_NUMBER=
 ```
 - Twilio:
 https://www.twilio.com/
-Create a developer account for Twilio to generate your account and auth keys.
+* Create a developer account for Twilio to generate your account and auth keys.
 
 - Ensure Postgres is running
 - Create database `foundation`
+- Install Dependencies `yarn install` or `npm install`
 - Deploy subgraph changes with `yarn deploy`
 - Run development server with `yarn serve`
     * This will create the `ens` table for you to persist ENS names from the subgraph to.
