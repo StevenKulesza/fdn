@@ -28,6 +28,7 @@ https://www.twilio.com/
     * This will create the `ens` table for you to persist ENS names from the subgraph to.
     * A scheduled service will run, long polling the subgraph and inserts new records into our table. 
     * A text message will be sent to `TWILIO_TO_NUMBER` and the message_id will be persisted to a column in the table. If it fails, the column will not be updated. We can create a retry mechanism in future iterations.
+* Run a test `yarn test`
 
 -------
 <img width="1236" alt="Screen Shot 2021-07-12 at 7 56 14 PM" src="https://user-images.githubusercontent.com/17483238/125369886-38354680-e34b-11eb-88e0-da7b200c0628.png">
@@ -63,12 +64,12 @@ I would index on items we would search on as we grew our app like the `sms_sid` 
 
 I would dockerize the setup of the application to sandbox the environment for easy start up.
 #### Test Coverage
-Writing tests when building smart contracts is important, when handling customers money, we want to insure our contracts are working as expected and nothing is lost. Hardhat & Chai can help us with that.
-
 Outside of the contract, each endpoint, gql query, and our ens and sms services needs appropriate testing coverage. 
 
-We need to mock our endpoints and ensure we are being returned the appropriate values.
+We need to mock our endpoints and ensure we are being returned the appropriate values. I created one at `./api/index.test.js` to show if i shipped this feature complete i would test the rest of the app with more time allowed.
+
 We need to unit test our services to assure they are manipulating data as we expect. 
+
 #### Web Socket Subscriptions over Long Polling
 GraphQL subscriptions were made for listening to certain events and changes this solution allowing us to subscribe to a data stream of read events and update our records without using unncessary resources on our server to poll the api. There are pros and cons for each, but Subscriptions make the most sense here. In my short time research, i found only Apollo client allowed subscribing to a gql endpoint and not Apollo Server. 
 

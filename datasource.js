@@ -1,22 +1,11 @@
-import { GraphQLDataSource } from 'apollo-datasource-graphql';
-import { gql } from 'apollo-server-express';
-
-export class EnsQuerySubgraph extends GraphQLDataSource {
+import { API } from './api/index.js'
+const api = new API()
+export class EnsQuerySubgraph {
   async getData() {
-    const query = gql`{
-        setENSNames {
-          id
-          name
-        }
-      }
-    `;
-
     try {
-      const response = await this.query(query);
-      console.log(response.data.setENSNames)
-      return response.data.setENSNames;
+      const response = await api.getENSNames()
+      return response.setENSNames;
     } catch (error) {
-        console.log(response)
       console.error(error);
     }
   }
