@@ -1,4 +1,4 @@
-# Foundation subgraph ENS sms notifications
+# Foundation ENS subgraph - sms notifications
 `https://thegraph.com/legacy-explorer/subgraph/stevenkulesza/fdn`
 
 ## setup
