@@ -41,12 +41,12 @@ https://www.twilio.com/
 ## What went well?
 Overall, the system works. We created a service to store and send notifications out for existing and new ens entries from our test contract. 
 
-I enjoyed learning about the Graph, indexing data from blocks and the next wave of decentralized apps. I got to use GraphQL for the first time. I will continue researching and utilizing this in my future projects. 
+I enjoyed learning about The Graph, indexing data from blocks and the next wave of decentralized apps. I got to use GraphQL for the first time. I will continue researching and utilizing this in my future projects. 
 
 ## What could have gone better?
 I would of started from a template to save more time for implementation in the timeframe given.
 
-In the real world, i would treat this project as a point of concept for a bigger effort. This would follow with investigations and implementation planning before properly building this application.
+I would treat this project as a proof of concept for a bigger effort. This would follow with investigations and implementation planning before properly building this application.
 
 There are a number of things i would like to improve and iterate on. Please see the answers to the next question. 
 
@@ -60,7 +60,7 @@ I would utilize a worker queue for handling sending the sms messages, retries an
 
 I would add an http caching layer to easily avoid refetching resources and sequential scans of the db when inserting more records.
 
-I would index on items we would search on as we grew our app like the `sms_sid` column which would be use.
+I would index on columns we would query like the `sms_sid` column which would be useful as we generate more records.
 
 I would dockerize the setup of the application to sandbox the environment for easy start up.
 #### Test Coverage
